@@ -1,0 +1,40 @@
+{
+  "name": "msg2svg",
+  "version": "1.0.0",
+  "description": "Convert a message into a svg, seemingly random.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "browserify-shim": {
+    "d3": "global:d3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eiriksm/msg2svg.git"
+  },
+  "author": "Eirik S. Morland <eirik@morland.no>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eiriksm/msg2svg/issues"
+  },
+  "homepage": "https://github.com/eiriksm/msg2svg",
+  "dependencies": {
+    "d3": "^3.4.11",
+    "seed-random": "^2.2.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "^5.11.0",
+    "browserify-shim": "^3.7.0",
+    "gulp": "^3.8.7",
+    "vinyl-source-stream": "^0.1.1"
+  }
+}
