@@ -34,7 +34,11 @@
   "devDependencies": {
     "browserify": "^5.11.0",
     "browserify-shim": "^3.7.0",
+    "coveralls": "^2.11.1",
     "gulp": "^3.8.7",
+    "istanbul": "^0.3.0",
+    "mocha": "^1.21.4",
+    "should": "^4.0.4",
     "vinyl-source-stream": "^0.1.1"
   }
 }
