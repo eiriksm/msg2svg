@@ -17,15 +17,22 @@ function generateSvg(randomseed, opts) {
     return Math.floor(random() * max);
   };
 
-  //The SVG Container
-  var svgContainer = d3.select("body").append("svg")
-    .attr("width", opts.width)
-    .attr("height", opts.height);
+  // The SVG Container.
+  var svgContainer;
+  if (typeof(document) === 'undefined') {
+    svgContainer = d3.select('body').append('svg');
+  }
+  else {
+    svgContainer = d3.select(document.createElementNS(d3.ns.prefix.svg, 'svg'));
+  }
+  svgContainer
+    .attr('width', opts.width)
+    .attr('height', opts.height);
 
   addLines(svgContainer, getRandom);
   addCircles(svgContainer, getRandom);
 
-  var svgGraph = d3.select('svg')
+  var svgGraph = svgContainer
   .attr('xmlns', 'http://www.w3.org/2000/svg');
 
   return svgGraph;
