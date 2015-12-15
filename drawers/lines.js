@@ -1,4 +1,5 @@
 var getColor = require('../helpers/colors');
+var d3 = require('d3');
 
 module.exports = function(svgContainer, getRandom) {
   var width = svgContainer.attr('width');
@@ -27,11 +28,11 @@ module.exports = function(svgContainer, getRandom) {
       fill = getColor(getRandom);
     }
 
-    svgContainer.append("path")
-      .attr("d", lineFunction(lines))
-      .attr("stroke", getColor(getRandom))
-      .attr("stroke-width", getRandom(Math.floor(height / 4)))
-      .attr("fill", fill);
+    svgContainer.append('path')
+      .attr('d', lineFunction(lines))
+      .attr('stroke', getColor(getRandom))
+      .attr('stroke-width', getRandom(Math.floor(height / 4)))
+      .attr('fill', fill);
     linesAdded += 1;
   }
 };
