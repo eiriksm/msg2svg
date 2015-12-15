@@ -1,3 +1,4 @@
+'use strict';
 var d3 = require('d3');
 var seed = require('seed-random');
 
@@ -6,7 +7,7 @@ var addCircles = require('./drawers/circles');
 
 module.exports = generateSvg;
 
-function generateSvg(randomseed, opts) {
+function generateSvg(document, randomseed, opts) {
   if (!opts) {
     opts = {};
   }
@@ -16,15 +17,9 @@ function generateSvg(randomseed, opts) {
   var getRandom = function(max) {
     return Math.floor(random() * max);
   };
-
-  // The SVG Container.
-  var svgContainer;
-  if (typeof(document) === 'undefined') {
-    svgContainer = d3.select('body').append('svg');
-  }
-  else {
-    svgContainer = d3.select(document.createElementNS(d3.ns.prefix.svg, 'svg'));
-  }
+  
+  var svg = document.createElementNS(d3.ns.prefix.svg, 'svg');
+  var svgContainer = d3.select(svg);
   svgContainer
     .attr('width', opts.width)
     .attr('height', opts.height);
@@ -33,7 +28,7 @@ function generateSvg(randomseed, opts) {
   addCircles(svgContainer, getRandom);
 
   var svgGraph = svgContainer
-  .attr('xmlns', 'http://www.w3.org/2000/svg');
+    .attr('xmlns', 'http://www.w3.org/2000/svg');
 
   return svgGraph;
 }

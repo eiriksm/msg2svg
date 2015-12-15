@@ -1,4 +1,6 @@
+'use strict';
 var getColor = require('../helpers/colors');
+var d3 = require('d3');
 
 module.exports = function(svg, getRandom) {
   var width = svg.attr('width');
@@ -22,12 +24,12 @@ module.exports = function(svg, getRandom) {
       strokeWidth = getRandom(Math.floor(height / 10)) + 1;
     }
 
-    svg.append("ellipse")
-      .attr("cx", x1)
-      .attr("cy", y1)
-      .attr("rx", getRandom(radiusMax) + 2)
-      .attr("ry", getRandom(radiusMax) + 2)
-      .attr("fill", fill)
+    svg.append('ellipse')
+      .attr('cx', x1)
+      .attr('cy', y1)
+      .attr('rx', getRandom(radiusMax) + 2)
+      .attr('ry', getRandom(radiusMax) + 2)
+      .attr('fill', fill)
       .attr('stroke', strokeColor)
       .attr('stroke-width', strokeWidth);
     added += 1;
