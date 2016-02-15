@@ -1,5 +1,6 @@
+'use strict';
 var msg2svg = require('./..');
-var should = require('should');
+require('should');
 var fs = require('fs');
 var document = require('jsdom').jsdom();
 

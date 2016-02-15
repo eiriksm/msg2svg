@@ -1,6 +1,5 @@
 'use strict';
 var getColor = require('../helpers/colors');
-var d3 = require('d3');
 
 module.exports = function(svg, getRandom) {
   var width = svg.attr('width');
