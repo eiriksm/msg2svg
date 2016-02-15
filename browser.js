@@ -1,3 +1,4 @@
+/*global document */
 'use strict';
 var d3 = require('d3');
 var msg2svg = require('./index.js').bind(null, document);
@@ -11,7 +12,7 @@ var redraw = function(seed) {
     height: 400
   });
   d3.select('body')
-    .node().appendChild(svg.node())
+    .node().appendChild(svg.node());
 
 };
 
