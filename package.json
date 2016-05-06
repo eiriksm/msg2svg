@@ -26,7 +26,7 @@
     "seed-random": "^2.2.0"
   },
   "devDependencies": {
-    "browserify": "^12.0.2",
+    "browserify": "^13.0.1",
     "coveralls": "^2.11.1",
     "eslint": "^2.0.0",
     "gulp": "^3.8.7",
