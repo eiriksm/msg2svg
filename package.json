@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/eiriksm/msg2svg",
   "dependencies": {
-    "d3": "^3.4.11",
+    "d3": "^3.5.11",
     "seed-random": "^2.2.0"
   },
   "devDependencies": {
