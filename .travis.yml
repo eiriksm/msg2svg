@@ -1,8 +1,17 @@
 language: node_js
 node_js:
-  - "4"
+- 4
+- 6
+- node
 sudo: false
-script:
-  npm run coverage
 after_script:
-  cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js > /dev/null 2>&1
+- npm run coverage
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js > /dev/null 2>&1
+deploy:
+  provider: npm
+  email: eirik@morland.no
+  api_key:
+    secure: LEFW1jcfezzUeOhZSZuRg0rILWEYE4ssNNC/eTY8HZZUekGBibDNXTNTh0KOrn6ooSsbLGrWo/2WwYUK1yHi+ztPr1741505vR75xmGFeQ2uqz4swthde0pSRoDL+xAUKeBCVYS64eiMa6NRSmMMX+hE7Kx8rmFEhMriHD0hYxo=
+  on:
+    tags: true
+    repo: eiriksm/msg2svg
