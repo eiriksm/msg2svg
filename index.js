@@ -18,7 +18,7 @@ function generateSvg(document, randomseed, opts) {
     return Math.floor(random() * max);
   };
 
-  var svg = document.createElementNS(d3.ns.prefix.svg, 'svg');
+  var svg = document.createElementNS(d3.namespaces.svg, 'svg');
   var svgContainer = d3.select(svg);
   svgContainer
     .attr('width', opts.width)

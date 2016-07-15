@@ -5,10 +5,9 @@ var d3 = require('d3');
 module.exports = function(svgContainer, getRandom) {
   var width = svgContainer.attr('width');
   var height = svgContainer.attr('height');
-  var lineFunction = d3.svg.line()
+  var lineFunction = d3.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; })
-    .interpolate('linear');
   var numLines = getRandom(Math.floor(width / 20)) + 1;
   // Make some lines.
   var linesAdded = 0;
